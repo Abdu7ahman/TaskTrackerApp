@@ -3,6 +3,7 @@ package ru.abdur.SecurityApp.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.abdur.SecurityApp.dto.UserDto;
 import ru.abdur.SecurityApp.jwt.JwtRequest;
@@ -26,7 +27,7 @@ public class RestControllers {
         return new JwtResponse(token);
     }
     @PostMapping("/registr")
-    public ResponseEntity addUser(@RequestBody UserDto userDto){
+    public ResponseEntity addUser(@RequestBody @Validated UserDto userDto){
         userService.create(userDto);
         //String las = userDto.getLastName();
 
