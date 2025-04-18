@@ -32,3 +32,22 @@ TaskScheduler — это распределённая система для уп
 cd TaskScheduler && mvn clean package -DskipTests
 cd ../EmailSender && mvn clean package -DskipTests
 cd ../SchedulerService && mvn clean package -DskipTests
+
+2. Запуск проекта:
+  docker-compose up --build
+
+3. Сервисы будут досупны на:
+- http://localhost:8080 — TaskScheduler
+- http://localhost:8081 — SchedulerService
+- http://localhost:8082 — EmailSender
+- RabbitMQ: http://localhost:15672 (guest/guest)
+
+# ⚡ Архитектура
+- TaskScheduler формирует задачи.
+- SchedulerService планирует отложенные события.
+- EmailSender уведомляет пользователей о задачах.
+- Связь между сервисами через RabbitMQ.
+
+
+
+
