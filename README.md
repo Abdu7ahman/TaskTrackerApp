@@ -42,11 +42,15 @@ cd ../SchedulerService && mvn clean package -DskipTests
 - http://localhost:8082 — EmailSender
 - RabbitMQ: http://localhost:15672 (guest/guest)
 
+---
+
 ## ⚡ Архитектура
 - TaskScheduler формирует задачи.
 - SchedulerService планирует отложенные события.
 - EmailSender уведомляет пользователей о задачах.
 - Связь между сервисами через RabbitMQ.
+
+---
 
 
 
