@@ -41,7 +41,7 @@ cd ../SchedulerService && mvn clean package -DskipTests
 - http://localhost:8081 — SchedulerService
 - http://localhost:8082 — EmailSender
 - RabbitMQ: http://localhost:15672 (guest/guest)
-
+```
 ---
 
 ## ⚡ Архитектура
